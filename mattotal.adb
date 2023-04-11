@@ -14,7 +14,7 @@ package body Mattotal is
    end Lectura;
    
 
-   -- Impresión
+   -- ImpresiÃ³n
    procedure Impresion(X: in Tipomat) is
       
    begin
@@ -54,7 +54,7 @@ package body Mattotal is
    end Comparar;
       
 
-      -- Ordenar matriz
+    -- Ordenar matriz
    procedure Ordenar(X: in out Tipomat) is
          
       Traspuesta:Tipomat;
@@ -94,7 +94,6 @@ package body Mattotal is
          
    end Ordenar;
    
-
 -- Transponer matriz
    procedure Traspuesta(X: in out Tipomat) is
          
@@ -120,31 +119,28 @@ package body Mattotal is
 
 
 --Busqueda en la matriz
-  function Busqueda(X: Tipomat; elemento: Tipodato) return Integer is
-   
-   Cont:Integer;
-   Encontro: Boolean;
-   
-begin
-   
-   Cont:=0;
-   Encontro:=False;
-   
-   for I in indice'range loop
-      for J in Indice'range loop
-      Cont:=Cont+1;
-      if X(I,J)=elemento then
-         Encontro:=True;
-         return Cont; 
-      end if;
-      end loop;
-   end loop;
-   
-     if Encontro=False then
-      Cont:=0; 
-      return Cont; --devuelve 0 si no se encontro el elemento.
-   end if;
-   
+  procedure Busqueda(X: in Tipomat; elemento: in Tipodato; fila,columna: out integer; encontro: out boolean ) is
+     Cont,cont1:Integer;
+     
+  begin
+     
+     Fila:=0;
+     Columna:=0;
+     Cont:=0;
+     cont1:=0;
+     encontro:=false;
+     for I in Indice'range loop
+        cont1:=cont1+1;
+        cont:=0;
+        for J in Indice'range loop
+           cont:=cont+1;
+           if X(I,J)=Elemento then
+              Encontro:=True;
+              Columna:=Cont;
+              fila:=cont1;
+           end if;
+        end loop;
+           end loop;
 end Busqueda;
 
 
