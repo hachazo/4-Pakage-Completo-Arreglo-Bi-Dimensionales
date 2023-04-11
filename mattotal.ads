@@ -16,5 +16,5 @@ package MatTotal is
    function Comparar(X, Y: in TipoMat) return Integer;
    procedure Ordenar(X: in out TipoMat);
    procedure Traspuesta(X: in out Tipomat);
-   function busqueda(X: Tipomat; elemento: tipodato) return integer;
+   procedure busqueda(X: Tipomat; elemento: tipodato; fila,columna: out integer; encontro: out boolean);
 end MatTotal;
