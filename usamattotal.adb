@@ -1,4 +1,4 @@
-  with Ada.Text_Io,mattotal,ada.Integer_Text_IO;
+with Ada.Text_Io,mattotal,ada.Integer_Text_IO;
 use Ada.Text_Io,Ada.Integer_Text_Io;
 
 procedure Usamattotal is
@@ -33,8 +33,8 @@ X, Y: Mat;
 -- Programa principal
 procedure Programa_Prin(X, Y: in out Mat) is
 
-    Option, temp, elemento: Integer;
-
+    Option,temp,elemento,fila,columna: Integer;
+    encontro:boolean;
 begin
 
     Put_Line("------------------------------");
@@ -59,7 +59,7 @@ begin
         new_line;
 
         Put_Line("1. Comparar matrices");
-        Put_Line("2. Ordenar los matrices");
+        Put_Line("2. Ordenar las matrices");
         Put_Line("3. Imprimir matrices");
         Put_Line("4. Buscar un elemento");
         Put_Line("5. Salir del programa");
@@ -93,18 +93,19 @@ begin
                 new_line;
                 Put_Line("Ingrese el elemento a buscar:");
                 Get(Elemento);
-                Temp := Busqueda(x, Elemento);
+             
+               Busqueda(x, Elemento, fila,columna,encontro);
 
-                if Temp /= 0 then
+                if encontro then
                     New_Line;
-                    Put_line("El elemento se encontro en la matriz 1 en la la posicion: " & integer'image(temp));
+                    Put_line("El elemento se encontro en la matriz 1 en la la fila:" & integer'image(fila) & " columna:" & integer'image(columna));
                 else
                     new_line;
-                    Temp := Busqueda(y, Elemento);
+                    Busqueda(y, Elemento, fila,columna,encontro);
 
-                    if Temp /= 0 then
+                    if encontro then
                         new_line;
-                        Put_line("El elemento se encontro en la matriz 2 en la la posicion: " & integer'image(temp));
+                        Put_line("El elemento se encontro en la matriz 2 en la la fila:" & integer'image(fila) & " columna:" & integer'image(columna));
                     else
                         new_line;
                         Put_Line("El elemento no encontrado!");
