@@ -14,7 +14,7 @@ package body Mattotal is
    end Lectura;
    
 
-   -- Impresión
+   -- Impresion
    procedure Impresion(X: in Tipomat) is
       
    begin

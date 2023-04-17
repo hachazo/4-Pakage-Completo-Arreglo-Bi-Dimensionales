@@ -18,3 +18,6 @@ package MatTotal is
    procedure Traspuesta(X: in out Tipomat);
    procedure busqueda(X: Tipomat; elemento: tipodato; fila,columna: out integer; encontro: out boolean);
 end MatTotal;
+--package Matinc is new Mattotal(Integer, Rango, Mat, Getmatx, Putmatx, Putstring, Putlinestring, ">", "<");
+--use Matinc;
+--X, Y: Mat;

@@ -48,8 +48,7 @@ begin
     put_line("Ingrese los datos de la segunda matriz");
     Lectura(Y);
 
-    while Option /= 5 loop
-
+    while Option /= 6 loop
         New_Line;
 
         Put_Line("--------------------------------------");
@@ -62,8 +61,9 @@ begin
         Put_Line("2. Ordenar las matrices");
         Put_Line("3. Imprimir matrices");
         Put_Line("4. Buscar un elemento");
-        Put_Line("5. Salir del programa");
-
+        put_line("5. Trasponer la matriz");
+        Put_Line("6. Salir del programa");
+    
         Get(option);
 
         New_Line;
@@ -80,9 +80,10 @@ begin
                 end if;
 
             when 2 =>
-                Ordenar(x);
-                new_line;
-                Ordenar(Y);
+            
+            Ordenar(x);
+            new_line;
+            Ordenar(Y);
 
             when 3 =>
                 Impresion(x);
@@ -108,11 +109,26 @@ begin
                         Put_line("El elemento se encontro en la matriz 2 en la la fila:" & integer'image(fila) & " columna:" & integer'image(columna));
                     else
                         new_line;
-                        Put_Line("El elemento no encontrado!");
+                        Put_Line("Elemento no encontrado!");
                     end if;
                 end if;
 
             when 5 =>
+            Put_Line("1. Presione trasponer la primer matriz");
+            Put_Line("2. Presione para trasponer la segunda matriz");
+            Get(Temp);
+            new_line;
+            if Temp=1 then
+               Traspuesta(X);
+            else if Temp=2 then
+                  Traspuesta(Y);
+               else
+                  new_line;
+                  put_line("El numero ingresado no es valido!");
+               end if;
+               End if;
+               
+            when 6 =>
                 Put_Line(" ");
 
             when others =>
